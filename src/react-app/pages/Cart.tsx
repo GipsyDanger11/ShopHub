@@ -13,7 +13,7 @@ export default function Cart() {
       <div className="min-h-screen">
         <WavesBackground />
         <Header />
-        
+
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
           <div className="flex flex-col items-center justify-center py-20">
             <ShoppingBag className="w-24 h-24 text-purple-300 mb-6" />
@@ -40,7 +40,7 @@ export default function Cart() {
     <div className="min-h-screen">
       <WavesBackground />
       <Header />
-      
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="mb-8">
           <Link
@@ -98,11 +98,11 @@ export default function Cart() {
                         >
                           <Minus className="w-4 h-4 text-purple-700" />
                         </button>
-                        
+
                         <span className="text-lg font-medium text-purple-900 w-12 text-center">
                           {item.quantity}
                         </span>
-                        
+
                         <button
                           onClick={() =>
                             updateQuantity(item.id, item.quantity + 1)
@@ -116,10 +116,10 @@ export default function Cart() {
 
                       <div className="text-right">
                         <div className="text-xl font-bold bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
-                          ${(item.price * item.quantity).toFixed(2)}
+                          ₹{(item.price * item.quantity).toFixed(2)}
                         </div>
                         <div className="text-sm text-purple-600">
-                          ${item.price.toFixed(2)} each
+                          ₹{item.price.toFixed(2)} each
                         </div>
                       </div>
                     </div>
@@ -138,7 +138,7 @@ export default function Cart() {
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-purple-700">
                   <span>Subtotal</span>
-                  <span className="font-medium">${totalPrice.toFixed(2)}</span>
+                  <span className="font-medium">₹{totalPrice.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-purple-700">
                   <span>Shipping</span>
@@ -147,7 +147,7 @@ export default function Cart() {
                 <div className="border-t border-purple-200 pt-3">
                   <div className="flex justify-between text-lg font-bold bg-gradient-to-r from-purple-700 to-purple-900 bg-clip-text text-transparent">
                     <span>Total</span>
-                    <span>${totalPrice.toFixed(2)}</span>
+                    <span>₹{totalPrice.toFixed(2)}</span>
                   </div>
                 </div>
               </div>
