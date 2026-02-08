@@ -1,3 +1,7 @@
+/**
+ * @deprecated This static data has been migrated to MongoDB.
+ * Please use the API to fetch products.
+ */
 export interface Product {
   id: string;
   name: string;

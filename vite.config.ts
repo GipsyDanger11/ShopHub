@@ -1,15 +1,23 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { cloudflare } from "@cloudflare/vite-plugin";
 
-export default defineConfig({
+
+
+export default defineConfig(({ }) => ({
   plugins: [
     react(),
-    cloudflare(),
   ],
   server: {
     allowedHosts: true,
+    host: true,
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
   build: {
     chunkSizeWarningLimit: 5000,
@@ -19,4 +27,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));
