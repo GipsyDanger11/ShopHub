@@ -84,8 +84,3 @@ npm run db:reset
 | **Frontend** | `npx vite` | Starts only the React App |
 | **Lint** | `npm run lint` | Runs ESLint checks |
 | **Seed** | `npm run seed` | Seeds product data |
-
----
-
-> [!TIP]
-> This project was recently migrated from Cloudflare Workers to a dedicated Express/Node.js architecture for better scalability and easier containerization.
