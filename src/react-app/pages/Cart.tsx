@@ -33,7 +33,7 @@ export default function Cart() {
               Add some products to get started
             </p>
             <Link
-              to="/products"
+              to="/"
               className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -53,7 +53,7 @@ export default function Cart() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="mb-8">
           <Link
-            to="/products"
+            to="/"
             className="inline-flex items-center gap-2 text-purple-700 hover:text-purple-800 font-medium mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
