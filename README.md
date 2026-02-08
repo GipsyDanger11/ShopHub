@@ -1,66 +1,91 @@
-# ShopHub
+# 🛒 ShopHub
 
-A modern e-commerce application powered by React, Express, and MongoDB.
+ShopHub is a high-performance e-commerce application built with the modern MERN stack (minus the 'M' for local persistence, using MongoDB Atlas). It features a robust Express backend, a reactive Vite-powered frontend, and a containerized architecture for seamless deployment.
 
-## Architecture
+---
 
-- **Frontend**: React + Vite
-- **Backend**: Node.js + Express + Mongoose
-- **Database**: MongoDB (Atlas or Local)
+## 🏗️ Architecture
 
-## Setup
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Frontend** | React + Vite | User Interface & Client Logic |
+| **Backend** | Node.js + Express | RESTful API Service |
+| **Database** | MongoDB (Mongoose) | Persistent Data Storage |
+| **Container** | Docker + Compose | Environment Orchestration |
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+---
 
-2. **Configure Environment Variables**:
-   Create a `.env` file in the root directory and add your MongoDB connection string:
-   ```env
-   MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/shophub?retryWrites=true&w=majority
-   PORT=5000
-   ```
+## 🚀 Quick Start (Docker)
 
-3. **Database Seeding**:
-   Populate the database with initial product data:
-   ```bash
-   npm run seed
-   ```
-   To reset the database (clear all data and re-seed):
-   ```bash
-   npm run db:reset
-   ```
+The fastest way to get ShopHub running is using Docker. This spins up the Frontend, Backend, and a local MongoDB instance automatically.
 
-## Development
+> [!IMPORTANT]  
+> Ensure **Docker Desktop** is installed and running before starting.
 
-### Using Docker (Recommended)
-
-Run the entire application stack:
-
+### 1. Start the Stack
 ```bash
 docker compose up --build
 ```
 
-- **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:5000
+### 2. Access the Application
+- **Frontend**: [http://localhost:5173](http://localhost:5173)
+- **Backend API**: [http://localhost:5000](http://localhost:5000)
+- **Local MongoDB**: `mongodb://localhost:27017`
 
-### Local Development
+---
 
-To run both the frontend and backend concurrently:
+## 💻 Local Development (Manual)
 
+If you prefer to run the services directly on your machine:
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Configure Environment
+Create a `.env` file in the root directory:
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
+
+### 3. Run Development Server
 ```bash
 npm run dev
 ```
+*This command uses `concurrently` to start both the Express server and Vite frontend.*
 
-## Running Services Independently
+---
 
-**Backend Only**:
+## 🗄️ Database Management
+
+ShopHub includes built-in scripts to manage your product catalog.
+
+### Seed Data
+Populate the database with initial products:
 ```bash
-npm run server
+npm run seed
 ```
 
-**Frontend Only**:
+### Reset Database
+Clear all existing data and re-seed from scratch:
 ```bash
-npx vite
+npm run db:reset
 ```
+
+---
+
+## 🛠️ Independent Service Control
+
+| Service | Command | Description |
+| :--- | :--- | :--- |
+| **Backend** | `npm run server` | Starts only the Express API |
+| **Frontend** | `npx vite` | Starts only the React App |
+| **Lint** | `npm run lint` | Runs ESLint checks |
+| **Seed** | `npm run seed` | Seeds product data |
+
+---
+
+> [!TIP]
+> This project was recently migrated from Cloudflare Workers to a dedicated Express/Node.js architecture for better scalability and easier containerization.
